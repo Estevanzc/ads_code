@@ -1,5 +1,5 @@
-console.log("estou vivo. Por enquanto")
-
-let age = 18
-
-console.log(age);
+let n1, n2, n3
+n1 = 1
+n2 = 2
+n3 = 4
+console.log(`Média: ${((n1+n2+n3)/3).toFixed(2)}`)
