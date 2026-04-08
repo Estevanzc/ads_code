@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Estevan Zimermann de Carli</title>
+</head>
+<body>
+    <section>
+        <h2>Navegação</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cursos.html">Histórico de cursos</a></li>
+                <li><a href="contato.html">Formulário de contato</a></li>
+                <li><a href="galeria.html">Galeria de mídia</a></li>
+            </ul>
+        </nav>
+    </section>
+    <h1>Formulário de Contato</h1>
+    <form action="processa.php" method="POST" style="display: flex;flex-flow: column;width: 300px;gap: 10px 0px;">
+        <label for="name">Seu nome</label>
+        <input type="text" id="name" name="name" placeholder="Exemplo: John Doe">
+        <label for="email">Seu email</label>
+        <input type="email" id="email" name="email" placeholder="Exemplo: johndoe@gmail.com">
+        <label for="reason">Motivo de contato</label>
+        <select name="reason" id="reason">
+            <option value="-1" selected>Selecione</option>
+            <option value="1">Dúvida</option>
+            <option value="2">Sugestão</option>
+            <option value="3">Elogio</option>
+        </select>
+        <fieldset>
+            <legend>Qual seu nível de conhecimento em HTML?</legend>
+            <input type="radio" id="knowledge1" name="knowledge">
+            <label for="knowledge1">Iniciante</label><br>
+            <input type="radio" id="knowledge2" name="knowledge">
+            <label for="knowledge2">Intermediário</label><br>
+            <input type="radio" id="knowledge3" name="knowledge">
+            <label for="knowledge3">Avançado</label>
+        </fieldset>
+        <fieldset>
+            <legend>Preferências</legend>
+            <input type="checkbox" id="newsleter" name="newsleter">
+            <label for="newsleter">Quero receber novidades por e-mail</label><br>
+            <input type="checkbox" id="betatester" name="betatester">
+            <label for="betatester">Desejo participar de testes beta</label><br>
+            <input type="checkbox" id="data" name="data">
+            <label for="data">Autorizo o uso dos dados</label>
+        </fieldset>
+        <label for="content">Mensagem</label>
+        <textarea name="content" id="content"></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
