@@ -1,4 +1,5 @@
-let levels = 10
+const prompt = require("prompt-sync")()
+let levels = Number(prompt("Levels Num: "))
 let stars_num = 1
 let spaces_num = levels-1
 
