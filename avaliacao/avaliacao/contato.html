@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineFã - Meu Mundo do Cinema</title>
+</head>
+
+<body>
+    <header>
+        <h1>Contate-me (preferencialmente não)</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="filmes.html">Meus Filmes</a></li>
+            <li><a href="contato.html">Fale comigo</a></li>
+            <li><a href="galeria.html">Multimídia</a></li>
+        </ul>
+    </nav>
+    <form action="processa.php" method="POST">
+        <label for="name">Seu Nome</label>
+        <input type="text" id="name" name="name" placeholder="Exemplo: John Doe">
+        <label for="email">Seu email</label>
+        <input type="email" id="email" name="email" placeholder="Exemplo: johnDoe@example.com">
+        <label for="reason">Motivo</label>
+        <select name="reason" id="reason">
+            <option value="1">Sugestão de Filme</option>
+            <option value="2">Crítica construtiva</option>
+            <option value="3">Elogio</option>
+        </select>
+        <fieldset>
+            <legend>Qual seu gênero preferido?</legend>
+            <input type="radio" id="genre1" name="genre">
+            <label for="genre1">Ação</label>
+            <input type="radio" id="genre2" name="genre">
+            <label for="genre2">Drama</label>
+            <input type="radio" id="genre3" name="genre">
+            <label for="genre3">Suspense</label>
+            <input type="radio" id="genre4" name="genre">
+            <label for="genre4">Comédia</label>
+            <input type="radio" id="genre5" name="genre">
+            <label for="genre5">Documentário</label>
+        </fieldset>
+        <fieldset>
+            <legend>Preferências de contato</legend>
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">Quero receber dicas por e-mail</label>
+            <input type="checkbox" id="giveaway" name="giveaway">
+            <label for="giveaway">Desejo participar de sorteios</label>
+            <input type="checkbox" id="data" name="data">
+            <label for="data">Autorizo o uso das informações</label>
+        </fieldset>
+        <label for="subject">Assunto</label>
+        <textarea name="subject" id="subject" placeholder="Bom dia, senhor!"></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>
