@@ -1,0 +1,11 @@
+* {
+    font-family: Arial;
+}
+
+.container span {
+    display: inline;
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #dd7777;
+    border: 2px solid #c20000;
+}

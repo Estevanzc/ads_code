@@ -1,0 +1,16 @@
+.container {
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #cacaca;
+    padding: 20px;
+}
+.content {
+    height: 200vh;
+}
+.box-sticky {
+    position: sticky;
+    top: 10px;
+    padding: 20px;
+    background-color: #a2d2a0;
+    border: 2px solid black;
+}

@@ -1,0 +1,12 @@
+* {
+    font-family: Arial;
+}
+.box {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #33ADAD;
+    border: 2px solid black;
+}

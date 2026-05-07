@@ -1,0 +1,23 @@
+.box-parent {
+    position: relative;
+    display: block;
+    padding: 20px;
+    background-color: #A0C5D2;
+    border: 2px solid black;
+}
+#box1 {
+    position: absolute;
+    padding: 20px;
+    background-color: #E7E7BF;
+    border: 2px solid black;
+    top: 70px;
+    left: 50px;
+}
+#box2 {
+    top: 40px;
+    left: 40px;
+    position: absolute;
+    padding: 20px;
+    background-color: #E7E7BF;
+    border: 2px solid black;
+}

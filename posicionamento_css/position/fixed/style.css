@@ -1,0 +1,16 @@
+.container {
+    background-color: #f0f0f0;
+    border: 1px solid #cacaca;
+    padding: 20px;
+}
+.content {
+    height: 200vh;
+}
+.box-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    background-color: #A0C5D2;
+    border: 2px solid black;
+}

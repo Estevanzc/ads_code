@@ -1,0 +1,10 @@
+* {
+    font-family: Arial;
+}
+.container div {
+    display: block;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #A0C5D2;
+    border: 2px solid #002dc2;
+}

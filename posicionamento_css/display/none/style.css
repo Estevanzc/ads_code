@@ -1,0 +1,13 @@
+* {
+    font-family: Arial;
+}
+.box-visible {
+    display: block;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #E57979;
+    border: 2px solid black;
+}
+.box-hidden {
+    display: none;
+}
