@@ -1,0 +1,136 @@
+main {
+    width: 100vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #f0f0f0;
+    padding: 50px;
+    gap: 50px;
+}
+
+main>div {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: inset 20px 20px 45px #dddddd,
+        inset -20px -20px 45px #ffffff;
+}
+
+#sec3 a {
+    display: inline-block;
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+}
+
+#sec3 a:hover {
+    animation: rotate-link 0.5s ease;
+    background-color: #f03b35;
+}
+
+@keyframes rotate-link {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#sec4 .square-bullets {
+    list-style-type: square;
+    /* Marcadores quadrados para a lista
+não ordenada */
+}
+
+#sec4 .roman-numbers {
+    list-style-type: upper-roman;
+    /* Números romanos maiúsculos
+para a lista ordenada */
+}
+
+#sec5 ul {
+    list-style-type: circle;
+    /* Fallback para círculos caso a imagem não
+carregue */
+    list-style-image: url('images/star.png');
+    /* Imagem personalizada
+como marcador */
+    padding-left: 40px;
+    /* Ajuste conforme necessário para alinhar o
+texto com a imagem */
+}
+
+#sec6 .styled-list {
+    margin: 20px;
+    /* Espaço em torno da lista */
+    padding: 0;
+    /* Remove o preenchimento padrão para usar
+o personalizado nos itens */
+    list-style-type: none;
+    /* Remove os marcadores padrão */
+}
+
+#sec6 .styled-list li {
+    background-color: #f4f4f4;
+    /* Cor de fundo para cada item */
+    margin-bottom: 10px;
+    /* Espaço entre os itens da lista */
+    padding: 10px;
+    /* Preenchimento dentro de cada item */
+    text-align: center;
+    /* Centraliza o texto dentro do item */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+}
+
+#sec7 form {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#sec7 label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#sec7 input[type="text"],
+#sec7 input[type="email"],
+#sec7 textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+#sec7 textarea {
+    height: 100px;
+}
+
+#sec7 button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#sec7 button:hover {
+    background-color: #45a049;
+}

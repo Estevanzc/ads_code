@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+}
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px 10px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #cacaca;
+}
+nav a {
+    font-size: 12px;
+    padding: 7px 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    border-radius: 5px;
+}
+nav a:hover {
+    background-color: #cacaca;
+}
+nav a:link {
+    color: blue;
+}
+nav a:hover {
+    color: red;
+}
+nav a:active {
+    color: green;
+}
+nav a:visited {
+    color: purple;
+}
+main {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 60px;
+    width: 40vw;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-flow: column;
+    gap: 10px 0px;
+}
+h1 {
+    font-size: 20pt;
+    margin-bottom: 15px;
+}
+p {
+    text-indent: 50px;
+}
+figure {
+    align-self: center;
+    margin: 10px 0px;
+    width: 65%;
+    text-align: center;
+}
+img {
+    width: 100%;
+}
+figcaption {
+    font-size: 12px;
+}
+ul {
+    align-self: center;
+    padding: 10px;
+    list-style-type: none;
+    border-radius: 5px;
+    color: rgb(27, 27, 27);
+    background-color: rgb(247, 247, 247);
+}
+li {
+    margin: 5px 0px;
+}

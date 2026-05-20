@@ -1,0 +1,46 @@
+* {
+    font-family: "Poppins";
+}
+
+main div {
+    width: 450px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.15s ease;
+    border-radius: 15px;
+    font-size: 3em;
+    font-weight: bold;
+    color: #f0f0f0;
+    user-select: none;
+    cursor: pointer;
+}
+
+main div::after {
+    content: "Press";
+}
+
+main div:active::after {
+    content: "Pressed";
+}
+
+#button1 {
+    background: linear-gradient(to right, #373092, #615aca);
+    box-shadow: 10px 10px 5px rgb(60, 60, 60);
+}
+
+#button1:active {
+    box-shadow: 0px 0px 5px rgb(60, 60, 60);
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#button2 {
+    background: radial-gradient(circle at center, #615aca, #373092);
+    box-shadow: 2px 2px 5px rgb(27, 27, 27), -2px -2px 5px rgb(27, 27, 27);
+}
+
+#button2:active {
+    box-shadow: 0px 0px 5px rgb(27, 27, 27) inset;
+}
