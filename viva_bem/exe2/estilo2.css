@@ -1,0 +1,13 @@
+* {
+    font-family: "Poppins";
+}
+#dicas {
+    background-color: #e6ffe6;
+}
+.receitas {
+    border: 2px solid green;
+}
+footer a {
+    font-size: 12px;
+    color: gray;
+}

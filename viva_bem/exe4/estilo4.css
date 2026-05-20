@@ -1,0 +1,29 @@
+div {
+    margin: 10px;
+    padding: 15px;
+    font-family: Arial;
+    font-size: 16px;
+}
+
+div:first-child {
+    color: paleturquoise;
+    background-color: darkblue;
+}
+
+div:nth-child(2) {
+    color: #f0f0f0;
+    background-color: #494949;
+}
+
+div:nth-child(3) {
+    color: rgb(40, 0, 78);
+    background-color: rgb(158, 94, 218);
+}
+div:nth-child(4) {
+    color: rgba(0, 25, 78, 0.5);
+    background-color: rgba(94, 173, 218, 0.5);
+}
+div:nth-child(5) {
+    color: hsl(125, 100%, 15%);
+    background-color: hsla(130, 100%, 16%, 0.5)
+}
