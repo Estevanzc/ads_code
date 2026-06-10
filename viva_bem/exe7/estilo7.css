@@ -1,41 +1,23 @@
-div {
-    width: 250px;
-    height: 80px;
-    color: white;
+a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
     font-family: Arial;
-    margin-bottom: 20px;
-    padding: 10px;
-    box-sizing: border-box;
-}
+    font-size: 16px;
 
-#container {
-    position: relative;
-    height: 200px;
-    background-color: #eee;
+    padding: 5px;
 }
-
-#container div {
-    position: absolute;
-    top: 100px;
-    left: 100px;
-    background-color: darkgray;
+a:link {
+    color: green;
 }
-
-body>div:nth-child(1) {
-    background-color: darkblue;
+a:visited {
+    color: purple;
 }
-
-body>div:nth-child(2) {
-    position: relative;
-    top: 20px;
-    left: 20px;
-    background-color: darkcyan;
+a:hover {
+    background-color: lightyellow;
+    text-decoration: underline;
 }
-
-body>div:nth-child(4) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: darkgreen;
+a:active {
+    color: red;
+    background-color: lightgray;
 }
