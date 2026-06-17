@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @keyframes boardFade {
+            0% {
+                box-shadow: none;
+            }
+
+            100% {
+                box-shadow: inset 20px 20px 60px #828282,
+                    inset -20px -20px 60px #ffffff;
+            }
+        }
+
+        @keyframes maskFade {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #board {
+            box-shadow: none;
+            animation: boardFade 1s forwards;
+        }
+        #mask {
+            opacity: 0;
+            animation: maskFade 1s forwards;
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w-screen h-screen bg-[#e0e0e0] flex justify-center items-center">
+        <div id="board"
+            class="relative w-[500px] h-[500px] bg-[#e0e0e0] shadow-[inset_20px_20px_60px_#828282,inset_-20px_-20px_60px_#ffffff] grid grid-cols-3 grid-rows-3 gap-1 rounded-xl">
+            <div id="mask" class="absolute w-full h-full grid grid-cols-3 grid-rows-3 z-0"></div>
+        </div>
+    </div>
+    <script>
+        let mask = document.getElementById("mask")
+        let board = document.getElementById("board")
+        let turn = true
+        let icons = {
+            x: `<svg class="w-full h-full p-6" viewBox="0 0 100 100"><line x1="20" y1="20" x2="80" y2="80" stroke="#3b82f6" stroke-width="12" stroke-linecap="round" /><line x1="80" y1="20" x2="20" y2="80" stroke="#3b82f6" stroke-width="12" stroke-linecap="round" /></svg>`,
+            o: `<svg class="w-full h-full p-6" viewBox="0 0 100 100"><circle cx="50" cy="50" r="32"fill="none"stroke="#f43f5e"stroke-width="12" /></svg>`
+        }
+        let references = {
+            mask: ["border-r border-b", "border-r border-b border-l", "border-b border-l", "border-b border-r border-t", "border", "border-b border-l border-t", "border-r border-t", "border-r border-t border-l", "border-t border-l"],
+            board: ["rounded-tl-lg", "", "rounded-tr-lg", "", "", "", "rounded-bl-lg", "", "rounded-br-lg"],
+        }
+        let board_obj = []
+        function clear_board() {
+            while (board.lastChild !== mask) {
+                board.removeChild(board.lastChild);
+            }
+        }
+        function build_board(first = false) {
+            if (first) {
+                for (let i = 0; i <= 8; i++) {
+                    board_obj.push(null)
+                    let mask_item = document.createElement("div")
+                    mask_item.className = `border-[rgb(100,100,100)] ${references.mask[i]}`
+                    mask.appendChild(mask_item)
+                }
+                build_board()
+            } else {
+                clear_board()
+                for (i in board_obj) {
+                    let board_item = document.createElement("div")
+                    board_item.className = "z-10 " + references.board[i]
+                    board_item.className += board_obj[i] != null ? " bg-[#e0e0e0] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff]" : " hover:bg-[#e0e0e0] hover:shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] transition-all cursor-pointer"
+                    board_item.innerHTML = board_obj[i] != null ? icons[board_obj[i] == 1 ? "x" : "o"] : ""
+                    if (board_obj[i] == null) {
+                        board_item.addEventListener("click", function () {
+                            play(this)
+                        })
+                    }
+                    board.appendChild(board_item)
+                }
+            }
+        }
+        build_board(true)
+        function getIndex(element) {
+            return Array.from(board.children).indexOf(element) - 1;
+        }
+        function play(element) {
+            board_obj[getIndex(element)] = turn ? 1 : 0
+            turn = !turn
+            build_board()
+        }
+    </script>
+</body>
+
+</html>
