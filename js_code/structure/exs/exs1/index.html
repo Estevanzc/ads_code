@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul></ul>
+    <div>
+        <button onclick="showAll()">Show All</button>
+        <button onclick="showFiltered()">Show Filtered</button>
+    </div>
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: "Wireless Mouse",
+                price: 14.99,
+            },
+            {
+                id: 2,
+                name: "Mechanical Keyboard",
+                price: 89.99,
+            },
+            {
+                id: 3,
+                name: "USB-C Hub",
+                price: 39.5,
+            },
+            {
+                id: 4,
+                name: "27-inch Monitor",
+                price: 249.99,
+            },
+            {
+                id: 5,
+                name: "Laptop Stand",
+                price: 34.99,
+            },
+            {
+                id: 6,
+                name: "Noise-Canceling Headphones",
+                price: 199.99,
+            },
+            {
+                id: 7,
+                name: "Portable SSD 1TB",
+                price: 119.99,
+            },
+            {
+                id: 8,
+                name: "Webcam HD",
+                price: 59.99,
+            },
+            {
+                id: 9,
+                name: "Gaming chair",
+                price: 69.99,
+            },
+            {
+                id: 10,
+                name: "Gaming keyboard",
+                price: 79.99,
+            },
+        ];
+
+        let ul = document.getElementsByTagName("ul")[0]
+
+        function printItems(items) {
+            ul.innerHTML = ""
+            for (let product of items) {
+                let li = document.createElement("li")
+                li.innerHTML = `${product.name} (${product.price})`
+                ul.appendChild(li)
+            }
+        }
+        function showAll() {
+            printItems(products)
+        }
+        function showFiltered() {
+            let filtered_items = products.filter(product => product.price < 20)
+            printItems(filtered_items)
+        }
+    </script>
+</body>
+
+</html>
