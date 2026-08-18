@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: "Poppins";
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="w-screen h-screen flex justify-start items-center flex-col pt-5 pb-10 gap-y-4 bg-[#f0f0f0]">
+        <div id="panel" class="w-1/2 flex justify-center items-center gap-x-4">
+            <button onclick="addItem()">Add Item</button>
+            <button onabort="removeItem()">Remove First Item</button>
+        </div>
+        <div id="queue_list" class="w-1/2 grid grid-cols-3 gap-2">
+        </div>
+    </div>
+
+    <script>
+        class No {
+            constructor(v) {
+                this.value = v
+                this.next = null
+            }
+        }
+        class Queue {
+            constructor() {
+                this.first = null;
+                this.last = null;
+                this.count = 0
+            }
+            isEmpty() {
+                return this.count == 0
+            }
+            size() {
+                return this.count
+            }
+            enqueue(newValue) {
+                newValue = new No(newValue)
+                if (this.isEmpty()) {
+                    this.first = newValue
+                } else {
+                    this.last.next = newValue
+                }
+                this.last = newValue
+                this.count++
+            }
+            dequeue() {
+                if (this.size() > 0) {
+                    let head = this.first
+                    if (this.size() == 1) {
+                        this.last = null
+                    }
+                    this.first = head.next
+                    this.count--
+                    return head
+                }
+                return null
+            }
+            peek() {
+                return this.first
+            }
+            search(value) {
+                let current = this.first
+                for (let i = 0; i <= this.count - 1; i++) {
+                    if (current.value == value) {
+                        return current
+                    }
+                    current = current.next
+                }
+                return null
+            }
+            print() {
+                let arr = []
+                let current = this.first
+                for (let i = 0; i <= this.count - 1; i++) {
+                    arr.push(current.value)
+                    current = current.next
+                }
+                return arr;
+            }
+        }
+        let queue = new Queue()
+        let queueList = document.getElementById("queue_list")
+        function printList() {
+            let list = queue.print
+            queueList.innerHTML = ""
+            for (let i in list) {
+                let item = list[i]
+                queueList.innerHTML += `
+                <div class="px-5 py-2 flex justify-between items-center rounded-lg cursor-pointer transition-all shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] hover:shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+                    <p>${item}</p>
+                    <p class="text-xs font-semibold self-start">(item #${i})</p>
+                </div>
+                `
+            }
+        }
+        function addItem() {
+            let response = prompt("Tell a item") || null
+            if (response) {
+                queue.enqueue(response)
+                printList()
+            }
+        }
+        function removeItem() {
+            let head = queue.dequeue()
+            if (head) {
+                alert(`Item ${head.value} removed`)
+            }
+            printList()
+        }
+
+    </script>
+</body>
+
+</html>
