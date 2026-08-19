@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doce Sabor</title>
+    <style>
+        body {
+            transition: all 0.25s ease;
+        }
+        .dark {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Minha Lista de Doces Favoritos</h1>
+    <input type="text" id="name" name="name" placeholder="Por exemplo: Brigadeiro">
+    <button onclick="adicionarDoceNaLista()">Adicionar Doce</button>
+    <h2>Doces Selecionados:</h2>
+    <ul></ul>
+    <button onclick="ativarAltoContraste()">Ativar Alto Contraste</button>
+    <button onclick="desativarAltoContraste()">Desativar Alto Contraste</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
