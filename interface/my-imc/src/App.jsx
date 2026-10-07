@@ -19,11 +19,11 @@ function App() {
         <button onClick={(e) => calc_imc(e)}>Calc</button>
       </form>
 
-      {imc != 0 && 
-      <div>
-        <p>IMC: {imc}</p>
-        <p>{stages.find(stage => stage[0] <= imc)[1]}</p>
-      </div>
+      {imc != 0 &&
+        <div>
+          <p>IMC: {imc}</p>
+          <p>{stages.find(stage => stage[0] <= imc)[1]}</p>
+        </div>
       }
     </>
   )

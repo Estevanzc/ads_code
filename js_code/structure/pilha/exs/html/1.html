@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: "Roboto";
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="w-screen h-screen bg-[#f0f0f0] flex justify-start items-center flex-col pt-32">
+        <h1 class="text-4xl font-bold text-[#232323]">Ultramegapower navegador</h1>
+        <form onsubmit="addLink(event)" onreset="goBack(event)" action=""
+            class="w-1/3 flex justify-center items-center flex-col pt-12 gap-y-4">
+            <input type="text" name="link" id="link"
+                class="w-full px-5 py-2 bg-white rounded-lg shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+                placeholder="Digite uma URL">
+            <div class="w-full flex justify-between">
+                <button type="reset"
+                    class="text-sm px-10 py-2 bg-slate-500 rounded-lg font-bold text-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] cursor-pointer transistion-all hover:bg-slate-400 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">Go
+                    Back</button>
+                <button type="submit"
+                    class="text-sm px-10 py-2 bg-slate-500 rounded-lg font-bold text-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] cursor-pointer transistion-all hover:bg-slate-400 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">Submit</button>
+            </div>
+        </form>
+        <div id="links_list" class="w-1/4 pt-10 flex justify-start items-center flex-col">
+        </div>
+    </div>
+    <script>
+        let links = []
+        let input = document.getElementById("link")
+        let links_list = document.getElementById("links_list")
+
+        function addLink(event) {
+            event.preventDefault()
+            if (input.value.trim()) {
+                links.push(input.value)
+            }
+            input.value = ""
+            input.focus()
+            listLinks()
+        }
+        function goBack(event) {
+            event.preventDefault()
+            if (links.length > 0) {
+                input.value = links[links.length - 1]
+                links.pop()
+                input.focus()
+                listLinks()
+            }
+        }
+        function listLinks() {
+            links_list.innerHTML = ""
+            for (let i = links.length - 1; i >= 0; i--) {
+                let p = document.createElement("p")
+                p.innerHTML = links[i]
+                links_list.appendChild(p)
+            };
+        }
+    </script>
+</body>
+
+</html>
