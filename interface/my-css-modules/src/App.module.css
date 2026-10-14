@@ -1,0 +1,36 @@
+.container {
+  background-color: rgb(224, 246, 254);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.titulo {
+  color: darkblue;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.paragrafo {
+  font-size: 18px;
+  color: rgb(42, 41, 41);
+}
+
+.botao {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+  background-color: red;
+}
+
+.botaoAtivo {
+  background-color: blue !important;
+  /* O !important garante que a cor azul prevaleça */
+}

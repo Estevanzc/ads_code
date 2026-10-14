@@ -9,7 +9,7 @@ function App() {
 
   function changeUserType() {
     setUserType(userType == "Admin" ? "Visitante" : "Admin")
-  }
+  } 
   return (
     <>
       {userType == "Admin" ? (

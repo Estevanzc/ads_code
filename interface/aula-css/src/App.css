@@ -1,0 +1,10 @@
+.container {
+  background-color: lightblue;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+}
